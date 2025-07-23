@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RenderCore UI Panel</title>
+  <style>
+    body { font-family: Arial; background: #111; color: #eee; padding: 30px; }
+    .button { padding: 10px 20px; background: #333; border: 1px solid #555; cursor: pointer; margin: 10px 0; }
+    .button:hover { background: #55f; }
+    input, textarea { background: #222; border: 1px solid #555; color: #fff; padding: 10px; width: 100%; margin: 5px 0; }
+    h1 { color: #55f; }
+  </style>
+</head>
+<body>
+<h1>🧠 RenderCore Local Web Panel</h1>
+
+<div>
+  <h3>🎯 Run Single</h3>
+  <input id="single" placeholder="e.g. Barbell Bicep Curl" />
+  <div class="button" onclick="run('render_single.py \'' + document.getElementById('single').value + '\'')">Run</div>
+</div>
+
+<div>
+  <h3>📦 Run Batch</h3>
+  <input id="batch" placeholder="e.g. test_batch" />
+  <div class="button" onclick="run('render_batch.py ' + document.getElementById('batch').value)">Run Batch</div>
+</div>
+
+<div>
+  <h3>🧪 QA + Export</h3>
+  <div class="button" onclick="run('check_pose_errors.py')">Check Poses</div>
+  <div class="button" onclick="run('create_build_manifest.py')">Build Manifest</div>
+</div>
+
+<h3>📋 Output</h3>
+<textarea id="log" rows="10" readonly></textarea>
+
+<script>
+function run(command) {
+  fetch("/run", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ command: command })
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("log").value = data.output || data.error;
+  });
+}
+</script>
+
+</body>
+</html>

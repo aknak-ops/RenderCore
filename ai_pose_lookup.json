@@ -1,0 +1,6 @@
+
+{
+  "Barbell Bicep Curl": ["standing", "arms forward", "neutral grip"],
+  "Push-Up": ["prone", "arms bent", "chest near ground"],
+  "Lunge": ["one leg forward", "knee bent", "upright torso"]
+}

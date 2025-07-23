@@ -1,0 +1,1 @@
+def render(entry): return '[MOCK] Simulated render'

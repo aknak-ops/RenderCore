@@ -1,0 +1,12 @@
+
+{
+  "Barbell Bicep Curl": {
+    "tags": ["biceps", "barbell", "curl", "strength", "isolation"]
+  },
+  "Push-Up": {
+    "tags": ["chest", "bodyweight", "strength", "triceps"]
+  },
+  "Lunge": {
+    "tags": ["legs", "glutes", "balance", "bodyweight"]
+  }
+}

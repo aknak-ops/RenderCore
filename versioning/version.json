@@ -1,0 +1,12 @@
+
+{
+  "rendercore_version": "1.0.0",
+  "last_updated": "2025-07-23T12:00:00Z",
+  "changelog": [
+    "Initial build complete",
+    "Added Electron wrapper",
+    "Web UI connected to Flask backend",
+    "Google Drive upload support",
+    "Webhook render trigger system"
+  ]
+}
