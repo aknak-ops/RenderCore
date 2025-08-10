@@ -1,0 +1,7 @@
+{
+  "base_url": "http://127.0.0.1:7860",
+  "timeout_sec": 60,
+  "retries": 3,
+  "backoff_sec": 2,
+  "default_phases": 3
+}
