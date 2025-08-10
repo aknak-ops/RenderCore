@@ -74,3 +74,61 @@
 [2025-08-10 15:45:42] WARNING: Scan path does not exist: equipment
 [2025-08-10 15:45:42] Found 0 folders with retry flags
 [2025-08-10 15:45:42] No folders found. To trigger renders, create 'retry_flag.txt' in exercise folders.
+[2025-08-10 15:54:45] === RenderCore Pipeline Started (DRY-RUN) ===
+[2025-08-10 15:54:45] Config: http://127.0.0.1:7860, timeout=60s, phases=3
+[2025-08-10 15:54:45] Scan paths: ['Characters', 'equipment']
+[2025-08-10 15:54:45] Limit: 3 folders
+[2025-08-10 15:54:45] WARNING: Scan path does not exist: Characters
+[2025-08-10 15:54:45] WARNING: Scan path does not exist: equipment
+[2025-08-10 15:54:45] Found 0 folders with retry flags
+[2025-08-10 15:54:45] No folders found. To trigger renders, create 'retry_flag.txt' in exercise folders.
+[2025-08-10 15:56:05] === RenderCore Pipeline Started (PRODUCTION) ===
+[2025-08-10 15:56:05] Config: http://127.0.0.1:7860, timeout=60s, phases=3
+[2025-08-10 15:56:05] Scan paths: ['Characters', 'equipment']
+[2025-08-10 15:56:05] Limit: 1 folders
+[2025-08-10 15:56:05] WARNING: Scan path does not exist: Characters
+[2025-08-10 15:56:05] WARNING: Scan path does not exist: equipment
+[2025-08-10 15:56:05] Found 0 folders with retry flags
+[2025-08-10 15:56:05] No folders found. To trigger renders, create 'retry_flag.txt' in exercise folders.
+[2025-08-10 15:56:18] === RenderCore Pipeline Started (PRODUCTION) ===
+[2025-08-10 15:56:18] Config: http://127.0.0.1:7860, timeout=60s, phases=3
+[2025-08-10 15:56:18] Scan paths: ['Characters', 'equipment']
+[2025-08-10 15:56:18] Limit: 1 folders
+[2025-08-10 15:56:18] WARNING: Scan path does not exist: equipment
+[2025-08-10 15:56:18] Found 1 folders with retry flags
+[2025-08-10 15:56:18] Limited to first 1 folders
+[2025-08-10 15:56:18] --- Processing 1/1: _demo_barbell_squat ---
+[2025-08-10 15:56:18] Processing folder: Characters\workout\_demo_barbell_squat
+[2025-08-10 15:56:18] Checking 3 phases in _demo_barbell_squat: 3 missing
+[2025-08-10 15:56:18] Missing phases: ['phase1.png', 'phase2.png', 'phase3.png'] (prompt: ﻿Lower a barbell to parallel, neutral spine, feet shoulder-w...)
+[2025-08-10 15:57:19] === RenderCore Pipeline Started (PRODUCTION) ===
+[2025-08-10 15:57:19] Config: http://127.0.0.1:7860, timeout=60s, phases=3
+[2025-08-10 15:57:19] Scan paths: ['Characters', 'equipment']
+[2025-08-10 15:57:19] Limit: 1 folders
+[2025-08-10 15:57:19] WARNING: Scan path does not exist: equipment
+[2025-08-10 15:57:19] Found 1 folders with retry flags
+[2025-08-10 15:57:19] Limited to first 1 folders
+[2025-08-10 15:57:19] --- Processing 1/1: _demo_barbell_squat ---
+[2025-08-10 15:57:19] Processing folder: Characters\workout\_demo_barbell_squat
+[2025-08-10 15:57:19] Checking 3 phases in _demo_barbell_squat: 3 missing
+[2025-08-10 15:57:19] Missing phases: ['phase1.png', 'phase2.png', 'phase3.png'] (prompt: Lower a barbell to parallel, neutral spine, feet shoulder-wi...)
+[2025-08-10 15:57:19] Generating: phase1.png
+[2025-08-10 15:57:19] API Call: http://127.0.0.1:7860/sdapi/v1/txt2img... with prompt: Lower a barbell to parallel, n...
+[2025-08-10 15:58:53] === RenderCore Pipeline Started (DRY-RUN) ===
+[2025-08-10 15:58:53] Config: http://127.0.0.1:7860, timeout=60s, phases=3
+[2025-08-10 15:58:53] Scan paths: ['Characters', 'equipment']
+[2025-08-10 15:58:53] Limit: 1 folders
+[2025-08-10 15:58:53] WARNING: Scan path does not exist: equipment
+[2025-08-10 15:58:53] Found 1 folders with retry flags
+[2025-08-10 15:58:53] Limited to first 1 folders
+[2025-08-10 15:58:53] --- Processing 1/1: _demo_barbell_squat ---
+[2025-08-10 15:58:53] Processing folder: Characters\workout\_demo_barbell_squat
+[2025-08-10 15:58:53] Checking 3 phases in _demo_barbell_squat: 3 missing
+[2025-08-10 15:58:53] Missing phases: ['phase1.png', 'phase2.png', 'phase3.png'] (prompt: Lower a barbell to parallel, neutral spine, feet shoulder-wi...)
+[2025-08-10 15:58:53] DRY-RUN: Would generate 3 images
+[2025-08-10 15:58:53] === Pipeline Complete ===
+[2025-08-10 15:58:53] Duration: 0:00:00.002699
+[2025-08-10 15:58:53] Folders processed: 1
+[2025-08-10 15:58:53] Images generated: 0
+[2025-08-10 15:58:53] Errors: 0
+[2025-08-10 15:58:53] Skipped: 0

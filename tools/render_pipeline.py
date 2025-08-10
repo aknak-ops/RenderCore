@@ -22,9 +22,10 @@ except ImportError:
 
 
 class RenderPipeline:
-    def __init__(self, config_path: str = "render_config.json", verbose: bool = False):
+    def __init__(self, config_path: str = "render_config.json", verbose: bool = False, cli_overrides: Optional[Dict] = None):
         self.config = self.load_config(config_path)
         self.verbose = verbose
+        self.cli_overrides = cli_overrides or {}
         self.log_file = Path("generated_pngs") / "render_log.txt"
         self.log_file.parent.mkdir(exist_ok=True)
         self.stats = {
@@ -129,19 +130,51 @@ class RenderPipeline:
             return None
         
         try:
-            with open(prompt_file, 'r', encoding='utf-8') as f:
-                return f.read().strip()
+            with open(prompt_file, 'r', encoding='utf-8-sig') as f:
+                prompt = f.read().strip()
+                # Remove any remaining BOM characters
+                prompt = prompt.lstrip('\ufeff')
+                return prompt
         except Exception as e:
             self.log_message(f"ERROR: Could not read prompt from {prompt_file}: {e}")
             return None
+
+    def preflight_check(self, dry_run: bool = False) -> bool:
+        """Check if AUTOMATIC1111 API is accessible."""
+        if dry_run:
+            return True
+            
+        try:
+            url = f"{self.config['base_url']}/sdapi/v1/progress"
+            response = requests.get(url, timeout=5)
+            if response.status_code == 200:
+                self.log_message(f"✓ AUTOMATIC1111 API accessible at {self.config['base_url']}")
+                return True
+            else:
+                print(f"ERROR: AUTOMATIC1111 API returned status {response.status_code}")
+                return False
+        except Exception:
+            print(f"ERROR: Cannot connect to AUTOMATIC1111 at {self.config['base_url']}")
+            print(f"Solution: Start webui-user.bat with --api flag")
+            print(f"Example: set COMMANDLINE_ARGS=--api --xformers --listen")
+            print(f"Current base_url: {self.config['base_url']}")
+            return False
 
     def call_automatic1111_api(self, prompt: str) -> Optional[bytes]:
         """Call AUTOMATIC1111 txt2img API and return image bytes."""
         url = f"{self.config['base_url']}/sdapi/v1/txt2img"
         
-        # Use configurable payload from config, with prompt override
+        # Use configurable payload from config, with CLI overrides
         payload = self.config['payload'].copy()
         payload['prompt'] = prompt
+        
+        # Apply CLI overrides
+        if 'steps' in self.cli_overrides:
+            payload['steps'] = self.cli_overrides['steps']
+        if 'cfg_scale' in self.cli_overrides:
+            payload['cfg_scale'] = self.cli_overrides['cfg_scale']
+        if 'sampler_name' in self.cli_overrides:
+            payload['sampler_name'] = self.cli_overrides['sampler_name']
         
         self.log_message(f"API Call: {url[:50]}... with prompt: {prompt[:30]}...", verbose_only=True)
         
@@ -203,11 +236,13 @@ class RenderPipeline:
             self.log_message(f"ERROR: Cannot process {folder} - no valid prompt.txt")
             return False
         
-        # Check what phases are missing
-        missing_phases = self.get_missing_phases(folder, self.config['default_phases'])
+        # Check what phases are missing (use CLI override if provided)
+        num_phases = self.cli_overrides.get('phases', self.config['default_phases'])
+        missing_phases = self.get_missing_phases(folder, num_phases)
         
         if not missing_phases:
-            self.log_message(f"SKIP: All {self.config['default_phases']} phases exist in {folder.name}")
+            num_phases = self.cli_overrides.get('phases', self.config['default_phases'])
+            self.log_message(f"SKIP: All {num_phases} phases exist in {folder.name}")
             self.stats["skipped"] += 1
             return True
         
@@ -261,8 +296,19 @@ class RenderPipeline:
         """Main pipeline execution."""
         start_time = datetime.now()
         mode = "DRY-RUN" if dry_run else "PRODUCTION"
+        
+        # Preflight check
+        if not self.preflight_check(dry_run):
+            if not dry_run:
+                sys.exit(1)
+            else:
+                self.log_message("DRY-RUN: Skipping API connectivity check")
+        
         self.log_message(f"=== RenderCore Pipeline Started ({mode}) ===")
-        self.log_message(f"Config: {self.config['base_url']}, timeout={self.config['timeout_sec']}s, phases={self.config['default_phases']}")
+        phases = self.cli_overrides.get('phases', self.config['default_phases'])
+        self.log_message(f"Config: {self.config['base_url']}, timeout={self.config['timeout_sec']}s, phases={phases}")
+        if self.cli_overrides:
+            self.log_message(f"CLI Overrides: {self.cli_overrides}")
         self.log_message(f"Scan paths: {scan_paths}")
         if limit:
             self.log_message(f"Limit: {limit} folders")
@@ -301,21 +347,25 @@ class RenderPipeline:
         self.log_message(f"Skipped: {self.stats['skipped']}")
         
         print(f"\n=== FINAL SUMMARY ===")
-        print(f"Duration: {duration}")
-        print(f"Folders processed: {self.stats['folders_processed']}")
-        print(f"Images generated: {self.stats['images_generated']}")
-        print(f"Errors: {self.stats['errors']}")
-        print(f"Skipped: {self.stats['skipped']}")
+        print(f"⏱️  Duration: {duration}")
+        print(f"📁 Folders processed: {self.stats['folders_processed']}")
+        print(f"🖼️  Images generated: {self.stats['images_generated']}")
+        print(f"⚠️  Errors: {self.stats['errors']}")
+        print(f"⏭️  Skipped: {self.stats['skipped']}")
         
         if self.stats['errors'] > 0:
-            print(f"\nSome folders had errors. Check {self.log_file} for details.")
-            print(f"Retry flags were left in failed folders for re-processing.")
+            print(f"\n❌ Some folders had errors. Check {self.log_file} for details.")
+            print(f"🔄 Retry flags were left in failed folders for re-processing.")
+        elif self.stats['images_generated'] > 0:
+            print(f"\n✅ Pipeline completed successfully!")
+        elif self.stats['skipped'] > 0:
+            print(f"\n✅ All target images already exist (skipped folders).")
 
 
 def main():
     parser = argparse.ArgumentParser(
         description="RenderCore Stable Diffusion Pipeline",
-        epilog="Example: python tools/render_pipeline.py --dry-run --limit 3"
+        epilog="Example: python tools/render_pipeline.py --dry-run --limit 3 --phases 4 --steps 30"
     )
     parser.add_argument("--dry-run", action="store_true", 
                        help="Show what would be done without making changes")
@@ -328,7 +378,28 @@ def main():
     parser.add_argument("--scan-paths", nargs="+", default=["Characters", "equipment"], 
                        help="Paths to scan for retry flags (default: Characters equipment)")
     
+    # CLI overrides for generation parameters
+    parser.add_argument("--phases", type=int, 
+                       help="Override number of phases to generate")
+    parser.add_argument("--steps", type=int, 
+                       help="Override number of diffusion steps")
+    parser.add_argument("--cfg", type=float, 
+                       help="Override CFG scale value")
+    parser.add_argument("--sampler", type=str, 
+                       help="Override sampler name (e.g., 'Euler a', 'DPM++ 2M Karras')")
+    
     args = parser.parse_args()
+    
+    # Build CLI overrides dict
+    cli_overrides = {}
+    if args.phases is not None:
+        cli_overrides['phases'] = args.phases
+    if args.steps is not None:
+        cli_overrides['steps'] = args.steps
+    if args.cfg is not None:
+        cli_overrides['cfg_scale'] = args.cfg
+    if args.sampler is not None:
+        cli_overrides['sampler_name'] = args.sampler
     
     # Print startup info
     if args.verbose or args.dry_run:
@@ -337,9 +408,11 @@ def main():
         print(f"Scan paths: {args.scan_paths}")
         if args.limit:
             print(f"Limit: {args.limit}")
+        if cli_overrides:
+            print(f"CLI Overrides: {cli_overrides}")
         print()
     
-    pipeline = RenderPipeline(args.config, args.verbose)
+    pipeline = RenderPipeline(args.config, args.verbose, cli_overrides)
     pipeline.run(args.scan_paths, args.dry_run, args.limit)
 
 
