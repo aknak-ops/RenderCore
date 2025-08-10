@@ -132,3 +132,21 @@
 [2025-08-10 15:58:53] Images generated: 0
 [2025-08-10 15:58:53] Errors: 0
 [2025-08-10 15:58:53] Skipped: 0
+[2025-08-10 16:08:34] === RenderCore Pipeline Started (DRY-RUN) ===
+[2025-08-10 16:08:34] Config: http://127.0.0.1:7860, timeout=60s, phases=3
+[2025-08-10 16:08:34] Scan paths: ['Characters', 'equipment']
+[2025-08-10 16:08:34] Limit: 1 folders
+[2025-08-10 16:08:34] WARNING: Scan path does not exist: equipment
+[2025-08-10 16:08:34] Found 1 folders with retry flags
+[2025-08-10 16:08:34] Limited to first 1 folders
+[2025-08-10 16:08:34] --- Processing 1/1: _demo_barbell_squat ---
+[2025-08-10 16:08:34] Processing folder: Characters\workout\_demo_barbell_squat
+[2025-08-10 16:08:34] Checking 3 phases in _demo_barbell_squat: 3 missing
+[2025-08-10 16:08:34] Missing phases: ['phase1.png', 'phase2.png', 'phase3.png'] (prompt: Lower a barbell to parallel, neutral spine, feet shoulder-wi...)
+[2025-08-10 16:08:34] DRY-RUN: Would generate 3 images
+[2025-08-10 16:08:34] === Pipeline Complete ===
+[2025-08-10 16:08:34] Duration: 0:00:00.002795
+[2025-08-10 16:08:34] Folders processed: 1
+[2025-08-10 16:08:34] Images generated: 0
+[2025-08-10 16:08:34] Errors: 0
+[2025-08-10 16:08:34] Skipped: 0

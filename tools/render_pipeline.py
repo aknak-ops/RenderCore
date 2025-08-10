@@ -347,19 +347,19 @@ class RenderPipeline:
         self.log_message(f"Skipped: {self.stats['skipped']}")
         
         print(f"\n=== FINAL SUMMARY ===")
-        print(f"⏱️  Duration: {duration}")
-        print(f"📁 Folders processed: {self.stats['folders_processed']}")
-        print(f"🖼️  Images generated: {self.stats['images_generated']}")
-        print(f"⚠️  Errors: {self.stats['errors']}")
-        print(f"⏭️  Skipped: {self.stats['skipped']}")
+        print(f"Duration: {duration}")
+        print(f"Folders processed: {self.stats['folders_processed']}")
+        print(f"Images generated: {self.stats['images_generated']}")
+        print(f"Errors: {self.stats['errors']}")
+        print(f"Skipped: {self.stats['skipped']}")
         
         if self.stats['errors'] > 0:
-            print(f"\n❌ Some folders had errors. Check {self.log_file} for details.")
-            print(f"🔄 Retry flags were left in failed folders for re-processing.")
+            print(f"\nSome folders had errors. Check {self.log_file} for details.")
+            print(f"Retry flags were left in failed folders for re-processing.")
         elif self.stats['images_generated'] > 0:
-            print(f"\n✅ Pipeline completed successfully!")
+            print(f"\nPipeline completed successfully!")
         elif self.stats['skipped'] > 0:
-            print(f"\n✅ All target images already exist (skipped folders).")
+            print(f"\nAll target images already exist (skipped folders).")
 
 
 def main():
