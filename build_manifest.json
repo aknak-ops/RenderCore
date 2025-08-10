@@ -1,9 +1,4 @@
-[
-  {
-    "exercise": "Barbell_Bicep_Curl",
-    "files": [
-      "metadata.json",
-      "prompt.txt"
-    ]
-  }
-]
+{
+  "version": "v1.0",
+  "includes": ["characters", "UI assets", "batch tools"]
+}

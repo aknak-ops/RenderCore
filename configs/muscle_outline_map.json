@@ -1,0 +1,10 @@
+{
+  "masculine": [
+    "pecs", "biceps", "triceps", "quads", "calves",
+    "traps", "glutes", "abs", "delts"
+  ],
+  "feminine": [
+    "delts", "abs", "glutes", "hams", "lats",
+    "calves", "obliques"
+  ]
+}

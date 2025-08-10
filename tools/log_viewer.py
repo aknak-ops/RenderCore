@@ -1,0 +1,1 @@
+# log_viewer.py - Placeholder script or config for RenderCore system

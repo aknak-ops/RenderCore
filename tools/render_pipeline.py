@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import time
+import base64
 import argparse
 from pathlib import Path
 from datetime import datetime
@@ -21,8 +22,9 @@ except ImportError:
 
 
 class RenderPipeline:
-    def __init__(self, config_path: str = "render_config.json"):
+    def __init__(self, config_path: str = "render_config.json", verbose: bool = False):
         self.config = self.load_config(config_path)
+        self.verbose = verbose
         self.log_file = Path("generated_pngs") / "render_log.txt"
         self.log_file.parent.mkdir(exist_ok=True)
         self.stats = {
@@ -39,7 +41,15 @@ class RenderPipeline:
             "timeout_sec": 60,
             "retries": 3,
             "backoff_sec": 2,
-            "default_phases": 3
+            "default_phases": 3,
+            "payload": {
+                "steps": 20,
+                "width": 512,
+                "height": 512,
+                "cfg_scale": 7,
+                "sampler_name": "Euler a",
+                "negative_prompt": ""
+            }
         }
         
         try:
@@ -57,7 +67,7 @@ class RenderPipeline:
             print(f"ERROR: Invalid JSON in {config_path}: {e}")
             return default_config
 
-    def log_message(self, message: str, print_also: bool = True):
+    def log_message(self, message: str, print_also: bool = True, verbose_only: bool = False):
         """Write message to log file and optionally print."""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_entry = f"[{timestamp}] {message}\n"
@@ -65,7 +75,7 @@ class RenderPipeline:
         with open(self.log_file, 'a', encoding='utf-8') as f:
             f.write(log_entry)
         
-        if print_also:
+        if print_also and (not verbose_only or self.verbose):
             print(message)
 
     def find_retry_folders(self, scan_paths: List[str]) -> List[Path]:
@@ -92,6 +102,8 @@ class RenderPipeline:
             if not (folder / base_filename).exists():
                 missing_phases.append(base_filename)
         
+        self.log_message(f"Checking {num_phases} phases in {folder.name}: {len(missing_phases)} missing", 
+                        verbose_only=True)
         return missing_phases
 
     def get_versioned_filename(self, folder: Path, base_filename: str) -> str:
@@ -127,14 +139,11 @@ class RenderPipeline:
         """Call AUTOMATIC1111 txt2img API and return image bytes."""
         url = f"{self.config['base_url']}/sdapi/v1/txt2img"
         
-        payload = {
-            "prompt": prompt,
-            "steps": 20,
-            "width": 512,
-            "height": 512,
-            "cfg_scale": 7,
-            "sampler_name": "Euler a"
-        }
+        # Use configurable payload from config, with prompt override
+        payload = self.config['payload'].copy()
+        payload['prompt'] = prompt
+        
+        self.log_message(f"API Call: {url[:50]}... with prompt: {prompt[:30]}...", verbose_only=True)
         
         for attempt in range(self.config['retries']):
             try:
@@ -148,25 +157,29 @@ class RenderPipeline:
                     result = response.json()
                     if 'images' in result and result['images']:
                         # Decode base64 image
-                        import base64
                         image_data = base64.b64decode(result['images'][0])
+                        self.log_message(f"SUCCESS: Generated image ({len(image_data)} bytes)", verbose_only=True)
                         return image_data
                     else:
                         self.log_message(f"ERROR: No images in API response")
                         return None
                 else:
-                    self.log_message(f"ERROR: API returned status {response.status_code}: {response.text}")
+                    error_text = response.text[:200] if response.text else "No error details"
+                    self.log_message(f"ERROR: API returned status {response.status_code}: {error_text}")
                     
             except requests.exceptions.Timeout:
-                self.log_message(f"WARNING: API timeout on attempt {attempt + 1}")
+                self.log_message(f"WARNING: API timeout on attempt {attempt + 1}/{self.config['retries']}")
             except requests.exceptions.ConnectionError:
-                self.log_message(f"WARNING: Connection error on attempt {attempt + 1}")
+                self.log_message(f"WARNING: Connection error on attempt {attempt + 1}/{self.config['retries']} - Is AUTOMATIC1111 running?")
             except Exception as e:
                 self.log_message(f"ERROR: API call failed: {e}")
             
             if attempt < self.config['retries'] - 1:
-                time.sleep(self.config['backoff_sec'] * (attempt + 1))
+                backoff_time = self.config['backoff_sec'] * (attempt + 1)
+                self.log_message(f"Retrying in {backoff_time} seconds...", verbose_only=True)
+                time.sleep(backoff_time)
         
+        self.log_message(f"ERROR: All {self.config['retries']} attempts failed for prompt: {prompt[:50]}...")
         return None
 
     def save_image(self, image_data: bytes, file_path: Path) -> bool:
@@ -187,24 +200,27 @@ class RenderPipeline:
         prompt = self.read_prompt_file(folder)
         if not prompt:
             self.stats["errors"] += 1
+            self.log_message(f"ERROR: Cannot process {folder} - no valid prompt.txt")
             return False
         
         # Check what phases are missing
         missing_phases = self.get_missing_phases(folder, self.config['default_phases'])
         
         if not missing_phases:
-            self.log_message(f"SKIP: All phases exist in {folder}")
+            self.log_message(f"SKIP: All {self.config['default_phases']} phases exist in {folder.name}")
             self.stats["skipped"] += 1
             return True
         
-        self.log_message(f"Missing phases: {missing_phases}")
+        self.log_message(f"Missing phases: {missing_phases} (prompt: {prompt[:60]}...)")
         
         if dry_run:
-            self.log_message(f"DRY-RUN: Would generate {len(missing_phases)} images for: {prompt[:50]}...")
+            self.log_message(f"DRY-RUN: Would generate {len(missing_phases)} images")
             return True
         
         # Generate missing images
         success = True
+        generated_count = 0
+        
         for phase_filename in missing_phases:
             final_filename = self.get_versioned_filename(folder, phase_filename)
             self.log_message(f"Generating: {final_filename}")
@@ -213,15 +229,22 @@ class RenderPipeline:
             if image_data:
                 file_path = folder / final_filename
                 if self.save_image(image_data, file_path):
-                    self.log_message(f"SUCCESS: Saved {file_path}")
+                    self.log_message(f"SUCCESS: Saved {final_filename} ({len(image_data)} bytes)")
                     self.stats["images_generated"] += 1
+                    generated_count += 1
                 else:
                     success = False
                     self.stats["errors"] += 1
+                    self.log_message(f"ERROR: Failed to save {final_filename}")
             else:
-                self.log_message(f"ERROR: Failed to generate image for {phase_filename}")
+                self.log_message(f"ERROR: Failed to generate image for {phase_filename} - API call failed")
                 success = False
                 self.stats["errors"] += 1
+        
+        if success and generated_count > 0:
+            self.log_message(f"Folder complete: Generated {generated_count}/{len(missing_phases)} images")
+        elif not success:
+            self.log_message(f"Folder failed: Generated {generated_count}/{len(missing_phases)} images")
         
         return success
 
@@ -237,14 +260,20 @@ class RenderPipeline:
     def run(self, scan_paths: List[str], dry_run: bool = False, limit: Optional[int] = None):
         """Main pipeline execution."""
         start_time = datetime.now()
-        self.log_message(f"=== RenderCore Pipeline Started ===")
+        mode = "DRY-RUN" if dry_run else "PRODUCTION"
+        self.log_message(f"=== RenderCore Pipeline Started ({mode}) ===")
+        self.log_message(f"Config: {self.config['base_url']}, timeout={self.config['timeout_sec']}s, phases={self.config['default_phases']}")
         self.log_message(f"Scan paths: {scan_paths}")
-        self.log_message(f"Dry run: {dry_run}")
-        self.log_message(f"Limit: {limit}")
+        if limit:
+            self.log_message(f"Limit: {limit} folders")
         
         # Find folders with retry flags
         retry_folders = self.find_retry_folders(scan_paths)
         self.log_message(f"Found {len(retry_folders)} folders with retry flags")
+        
+        if len(retry_folders) == 0:
+            self.log_message("No folders found. To trigger renders, create 'retry_flag.txt' in exercise folders.")
+            return
         
         if limit:
             retry_folders = retry_folders[:limit]
@@ -252,13 +281,15 @@ class RenderPipeline:
         
         # Process each folder
         for i, folder in enumerate(retry_folders, 1):
-            self.log_message(f"--- Processing {i}/{len(retry_folders)}: {folder} ---")
+            self.log_message(f"--- Processing {i}/{len(retry_folders)}: {folder.name} ---")
             
             success = self.process_folder(folder, dry_run)
             self.stats["folders_processed"] += 1
             
             if success and not dry_run:
                 self.remove_retry_flag(folder)
+            elif not success:
+                self.log_message(f"FAILED: Leaving retry flag in {folder.name} for retry")
         
         # Print final summary
         duration = datetime.now() - start_time
@@ -275,19 +306,40 @@ class RenderPipeline:
         print(f"Images generated: {self.stats['images_generated']}")
         print(f"Errors: {self.stats['errors']}")
         print(f"Skipped: {self.stats['skipped']}")
+        
+        if self.stats['errors'] > 0:
+            print(f"\nSome folders had errors. Check {self.log_file} for details.")
+            print(f"Retry flags were left in failed folders for re-processing.")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="RenderCore Stable Diffusion Pipeline")
-    parser.add_argument("--dry-run", action="store_true", help="Show what would be done without making changes")
-    parser.add_argument("--limit", type=int, help="Limit number of folders to process")
-    parser.add_argument("--config", default="render_config.json", help="Path to config file")
+    parser = argparse.ArgumentParser(
+        description="RenderCore Stable Diffusion Pipeline",
+        epilog="Example: python tools/render_pipeline.py --dry-run --limit 3"
+    )
+    parser.add_argument("--dry-run", action="store_true", 
+                       help="Show what would be done without making changes")
+    parser.add_argument("--limit", type=int, 
+                       help="Limit number of folders to process")
+    parser.add_argument("--verbose", "-v", action="store_true", 
+                       help="Enable verbose logging output")
+    parser.add_argument("--config", default="render_config.json", 
+                       help="Path to config file (default: render_config.json)")
     parser.add_argument("--scan-paths", nargs="+", default=["Characters", "equipment"], 
-                       help="Paths to scan for retry flags")
+                       help="Paths to scan for retry flags (default: Characters equipment)")
     
     args = parser.parse_args()
     
-    pipeline = RenderPipeline(args.config)
+    # Print startup info
+    if args.verbose or args.dry_run:
+        print(f"RenderCore Pipeline - {'DRY RUN' if args.dry_run else 'PRODUCTION'}")
+        print(f"Config: {args.config}")
+        print(f"Scan paths: {args.scan_paths}")
+        if args.limit:
+            print(f"Limit: {args.limit}")
+        print()
+    
+    pipeline = RenderPipeline(args.config, args.verbose)
     pipeline.run(args.scan_paths, args.dry_run, args.limit)
 
 

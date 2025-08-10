@@ -1,0 +1,1 @@
+# Path handling for cross-platform compatibility

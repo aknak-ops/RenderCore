@@ -1,0 +1,6 @@
+{
+  "difficulty": ["beginner", "intermediate", "advanced"],
+  "equipment": ["dumbbell", "barbell", "cable", "resistance_band"],
+  "category": ["strength", "mobility", "combat", "stretch"],
+  "muscles": ["biceps", "triceps", "quads", "glutes", "delts", "calves"]
+}

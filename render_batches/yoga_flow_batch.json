@@ -1,0 +1,16 @@
+{
+  "category": "yoga",
+  "theme": "calm_sky",
+  "pose_list": [
+    "downward_dog",
+    "warrior_2",
+    "tree_pose",
+    "cobra_stretch"
+  ],
+  "output_folder": "output/yoga_sessions",
+  "overlays": [
+    "ui_overlay_pack/yoga_frame.png",
+    "theme_swatches/calm_sky.png"
+  ],
+  "highlight_muscles": false
+}

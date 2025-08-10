@@ -1,9 +1,11 @@
-
 {
-  "batch_name": "test_batch",
+  "batch_name": "Test Batch",
   "exercises": [
-    "Barbell Bicep Curl",
-    "Push-Up",
-    "Lunge"
+    {
+      "name": "bicep_curl_dumbbell",
+      "theme": "Ocean Mist",
+      "muscles": ["biceps"],
+      "phase_count": 3
+    }
   ]
 }

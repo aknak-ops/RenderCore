@@ -1,0 +1,2 @@
+Each body type and model has a locked seed to ensure image generation is stable and repeatable.
+Partner figures use a solid orange fill with no gradients.

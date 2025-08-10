@@ -1,0 +1,36 @@
+1. [Automation & Smart Defaults] Overlay swapper for missing regions
+2. [Automation & Smart Defaults] Scan for empty input/output folders before render
+3. [Automation & Smart Defaults] Batch run preview image mosaic
+4. [Character AI Generation] Smart pose correction algorithm
+5. [Error Recovery & Retry Logic] Real-time config status flags
+6. [Logging & System Stats] Layout symmetry validator
+7. [Overlay AI Handling] Live thumbnail updates in dashboard
+8. [Overlay AI Handling] Background consistency checker
+9. [Overlay AI Handling] Quick-launch last 3 systems from shortcut
+10. [Overlay AI Handling] Theme variant comparison tool
+11. [Rendering Accuracy Tools] Display active system memory during run
+12. [Shortcut System Features] Detect accidental camera clipping in images
+13. [Shortcut System Features] Auto-tag rendered image with angle + lighting
+14. [Shortcut System Features] Auto-color correct based on theme's primary hue
+15. [Shortcut System Features] Highlight most used overlay elements
+16. [Shortcut System Features] Add warning if pose overlaps previous one
+17. [Shortcut System Features] Preview pose bounding box before render
+18. [Shortcut System Features] AI-predict best camera angle for next pose
+19. [Shortcut System Features] Store last used prompt for version tracking
+20. [Shortcut System Features] Simulate lighting scenarios before rendering
+21. [Shortcut System Features] Inject real muscle name into prompt string
+22. [Shortcut System Features] Swatch generator from rendered pixels
+23. [Shortcut System Features] Batch rename based on exercise category
+24. [Shortcut System Features] Randomize accessory set from pool folder
+25. [Shortcut System Features] Dynamic default pose set by theme
+26. [Shortcut System Features] Validate every overlay region pixel density
+27. [Shortcut System Features] Live update render progress bar in UI
+28. [Shortcut System Features] Create batch preview contact sheet for reviews
+29. [Shortcut System Features] Generate animated preview from batch
+30. [Shortcut System Features] Limit retry attempts by folder or batch
+31. [Shortcut System Features] Display average render time across themes
+32. [Theme & Swatch Tools] Lock/unlock character system with single key
+33. [UI AI Generation] Overlay alignment auto-check tool
+34. [User Interaction & Control Flow] Auto-light balance adjuster per system
+35. [Validation & File Checkers] Zip+validate+backup as single command
+36. [Web Dashboard UI] Prompt generator with muscle group injection

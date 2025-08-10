@@ -1,0 +1,16 @@
+{
+  "category": "workout",
+  "theme": "dark_orange",
+  "pose_list": [
+    "pushup_standard",
+    "pullup_wide",
+    "plank_elbows",
+    "squat_bodyweight"
+  ],
+  "output_folder": "output/workout_renders",
+  "overlays": [
+    "ui_overlay_pack/default_grid.png",
+    "theme_swatches/dark_orange.png"
+  ],
+  "highlight_muscles": true
+}

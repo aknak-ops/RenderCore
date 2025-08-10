@@ -1,0 +1,14 @@
+{
+    "bicep_curl": [
+        "pose_001"
+    ],
+    "tricep_extension": [
+        "pose_002"
+    ],
+    "lunge": [
+        "pose_003"
+    ],
+    "twist": [
+        "pose_004"
+    ]
+}

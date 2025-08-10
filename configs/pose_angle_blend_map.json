@@ -1,0 +1,6 @@
+{
+  "3/4 view": "slanted_gradient_front",
+  "side view": "horizontal_gradient_flow",
+  "back view": "mirrored_front_pattern",
+  "top-down": "adaptive radial gradient"
+}

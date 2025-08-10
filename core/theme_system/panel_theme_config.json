@@ -1,0 +1,10 @@
+{
+    "themes": [
+        {
+            "name": "Plain Orange",
+            "category": "Partner Style",
+            "visible": false,
+            "preview": "theme_swatches/Plain Orange.png"
+        }
+    ]
+}

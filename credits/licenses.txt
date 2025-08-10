@@ -1,0 +1,1 @@
+RenderCore includes open-source components under MIT, Apache 2.0, and CC BY 4.0 licenses.

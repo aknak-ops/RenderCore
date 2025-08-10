@@ -1,0 +1,6 @@
+{
+  "blend_type": "slanted_top_to_bottom",
+  "adjust_to_pose_angle": true,
+  "respect_anatomy_flow": true,
+  "theme_gradient_map_ref": "theme_gradient_map.json"
+}

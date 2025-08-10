@@ -1,0 +1,5 @@
+Back-facing renders derive their anatomy and color design from the front reference.
+This ensures:
+- Symmetrical muscle groups
+- Gradient layout consistency
+- Enforced top-to-bottom flow for all angles

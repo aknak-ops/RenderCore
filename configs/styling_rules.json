@@ -1,0 +1,9 @@
+{
+  "background_color": "#FFFFFF",
+  "shorts_color": "#000000",
+  "muscle_lines": "black",
+  "anatomy_style": "neutral_muscular",
+  "accessories_allowed": false,
+  "skin_texture": "flat_color_theme_only",
+  "allowed_color_sources": ["gradient_themes"]
+}

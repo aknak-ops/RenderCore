@@ -1,0 +1,26 @@
+{
+    "difficulty": [
+        "beginner",
+        "intermediate",
+        "advanced"
+    ],
+    "category": [
+        "strength",
+        "cardio",
+        "mobility",
+        "combat"
+    ],
+    "equipment": [
+        "dumbbell",
+        "barbell",
+        "bodyweight",
+        "band"
+    ],
+    "muscles": [
+        "biceps",
+        "triceps",
+        "quads",
+        "glutes",
+        "core"
+    ]
+}

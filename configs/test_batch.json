@@ -1,0 +1,9 @@
+
+{
+  "batch_name": "test_batch",
+  "exercises": [
+    "Barbell Bicep Curl",
+    "Push-Up",
+    "Lunge"
+  ]
+}

@@ -1,0 +1,1 @@
+This is a placeholder for pose_validation_tool.py

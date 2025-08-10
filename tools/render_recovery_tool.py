@@ -1,0 +1,1 @@
+# render_recovery_tool.py - Placeholder script or config for RenderCore system

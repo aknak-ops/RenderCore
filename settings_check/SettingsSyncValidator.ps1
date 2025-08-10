@@ -1,0 +1,1 @@
+# SettingsSyncValidator.ps1 - Feature script for Pack 22
