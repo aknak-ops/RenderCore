@@ -1,0 +1,231 @@
+{
+  "id": "fight_grappling_v1",
+  "name": "Fighting - Grappling",
+  "version": "1.0.0",
+  "description": "Grappling techniques including takedowns, sprawls, and escapes (no dangerous submissions)",
+  "domain": "fight",
+  "items": [
+    {
+      "id": "takedown-single-leg",
+      "name": "Single-Leg Takedown",
+      "domain": "fight",
+      "category": "takedown",
+      "equipment": [],
+      "primary_muscle": "legs",
+      "secondary_muscles": ["core", "shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["grappling", "wrestling", "takedown"],
+      "frames": [
+        {"id": "start", "label": "Setup", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Drive", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "takedown-double-leg",
+      "name": "Double-Leg Takedown",
+      "domain": "fight",
+      "category": "takedown",
+      "equipment": [],
+      "primary_muscle": "legs",
+      "secondary_muscles": ["core", "shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["grappling", "wrestling", "takedown"],
+      "frames": [
+        {"id": "start", "label": "Setup", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Drive", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "trip-body-lock",
+      "name": "Body Lock Trip",
+      "domain": "fight",
+      "category": "takedown",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["legs", "shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["grappling", "wrestling", "trip"],
+      "frames": [
+        {"id": "start", "label": "Clinch", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Trip", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "sprawl-defense",
+      "name": "Sprawl Defense",
+      "domain": "fight",
+      "category": "defense",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders", "legs"],
+      "difficulty": "beginner",
+      "tags": ["grappling", "wrestling", "defense"],
+      "frames": [
+        {"id": "start", "label": "Standing", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Sprawl", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "escape-back-mount",
+      "name": "Back Mount Escape",
+      "domain": "fight",
+      "category": "escape",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["grappling", "bjj", "escape"],
+      "frames": [
+        {"id": "start", "label": "Controlled", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Escape", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "escape-side-control",
+      "name": "Side Control Escape",
+      "domain": "fight",
+      "category": "escape",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders", "hips"],
+      "difficulty": "intermediate",
+      "tags": ["grappling", "bjj", "escape"],
+      "frames": [
+        {"id": "start", "label": "Bottom", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Bridge", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "standup-technical",
+      "name": "Technical Stand-Up",
+      "domain": "fight",
+      "category": "standup",
+      "equipment": [],
+      "primary_muscle": "legs",
+      "secondary_muscles": ["core", "shoulders"],
+      "difficulty": "beginner",
+      "tags": ["grappling", "mma", "standup"],
+      "frames": [
+        {"id": "start", "label": "Ground", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Standing", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "heist-hip",
+      "name": "Hip Heist",
+      "domain": "fight",
+      "category": "movement",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["hips", "shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["grappling", "movement", "transition"],
+      "frames": [
+        {"id": "start", "label": "Base", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Heist", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "shrimp-escape",
+      "name": "Shrimp Escape",
+      "domain": "fight",
+      "category": "escape",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["hips"],
+      "difficulty": "beginner",
+      "tags": ["grappling", "bjj", "movement"],
+      "frames": [
+        {"id": "start", "label": "Compressed", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Extended", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "guard-closed",
+      "name": "Closed Guard Position",
+      "domain": "fight",
+      "category": "position",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["legs"],
+      "difficulty": "beginner",
+      "tags": ["grappling", "bjj", "guard"],
+      "frames": [
+        {"id": "hold", "label": "Guard", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "bridge-grappling",
+      "name": "Grappling Bridge",
+      "domain": "fight",
+      "category": "bridge",
+      "equipment": [],
+      "primary_muscle": "glutes",
+      "secondary_muscles": ["hamstrings", "core"],
+      "difficulty": "beginner",
+      "tags": ["grappling", "conditioning", "bridge"],
+      "frames": [
+        {"id": "start", "label": "Down", "camera": "front", "keypoints": ["head", "neck", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Bridge", "camera": "three_quarter", "keypoints": ["head", "neck", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "roll-forward",
+      "name": "Forward Roll",
+      "domain": "fight",
+      "category": "roll",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders"],
+      "difficulty": "beginner",
+      "tags": ["grappling", "movement", "ukemi"],
+      "frames": [
+        {"id": "start", "label": "Squat", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Stand", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "roll-backward",
+      "name": "Backward Roll",
+      "domain": "fight",
+      "category": "roll",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["grappling", "movement", "ukemi"],
+      "frames": [
+        {"id": "start", "label": "Squat", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Stand", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "underhook-position",
+      "name": "Underhook Position",
+      "domain": "fight",
+      "category": "clinch",
+      "equipment": [],
+      "primary_muscle": "shoulders",
+      "secondary_muscles": ["core"],
+      "difficulty": "beginner",
+      "tags": ["grappling", "clinch", "position"],
+      "frames": [
+        {"id": "hold", "label": "Underhook", "camera": "front", "keypoints": ["head", "spine", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow"]}
+      ]
+    },
+    {
+      "id": "overhook-position",
+      "name": "Overhook Position",
+      "domain": "fight",
+      "category": "clinch",
+      "equipment": [],
+      "primary_muscle": "shoulders",
+      "secondary_muscles": ["core"],
+      "difficulty": "beginner",
+      "tags": ["grappling", "clinch", "position"],
+      "frames": [
+        {"id": "hold", "label": "Overhook", "camera": "front", "keypoints": ["head", "spine", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "id": "bodyweight_calisthenics_v1",
+  "name": "Bodyweight & Calisthenics",
+  "version": "1.0.0",
+  "description": "Bodyweight exercises and calisthenics movements for strength and conditioning",
+  "domain": "strength",
+  "items": [
+    {
+      "id": "pushup-standard",
+      "name": "Standard Push-Up",
+      "domain": "strength",
+      "category": "pushup",
+      "equipment": [],
+      "primary_muscle": "chest",
+      "secondary_muscles": ["triceps", "anterior-deltoids", "core"],
+      "difficulty": "beginner",
+      "tags": ["upper-body", "compound", "push", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Top", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine", "pelvis"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine", "pelvis"]}
+      ]
+    },
+    {
+      "id": "pushup-diamond",
+      "name": "Diamond Push-Up",
+      "domain": "strength",
+      "category": "pushup",
+      "equipment": [],
+      "primary_muscle": "triceps",
+      "secondary_muscles": ["chest", "anterior-deltoids"],
+      "difficulty": "intermediate",
+      "tags": ["upper-body", "compound", "push", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Top", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]}
+      ]
+    },
+    {
+      "id": "pushup-decline",
+      "name": "Decline Push-Up",
+      "domain": "strength",
+      "category": "pushup",
+      "equipment": ["bench"],
+      "primary_muscle": "chest",
+      "secondary_muscles": ["anterior-deltoids", "triceps"],
+      "difficulty": "intermediate",
+      "tags": ["upper-body", "compound", "push", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Top", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]}
+      ]
+    },
+    {
+      "id": "pushup-incline",
+      "name": "Incline Push-Up",
+      "domain": "strength",
+      "category": "pushup",
+      "equipment": ["bench"],
+      "primary_muscle": "chest",
+      "secondary_muscles": ["triceps", "anterior-deltoids"],
+      "difficulty": "beginner",
+      "tags": ["upper-body", "compound", "push", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Top", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]}
+      ]
+    },
+    {
+      "id": "pullup-standard",
+      "name": "Pull-Up",
+      "domain": "strength",
+      "category": "pullup",
+      "equipment": ["pullup-bar"],
+      "primary_muscle": "lats",
+      "secondary_muscles": ["rhomboids", "biceps", "rear-deltoids"],
+      "difficulty": "intermediate",
+      "tags": ["upper-body", "compound", "pull", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Bottom", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]},
+        {"id": "end", "label": "Top", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]}
+      ]
+    },
+    {
+      "id": "chinup-standard",
+      "name": "Chin-Up",
+      "domain": "strength",
+      "category": "pullup",
+      "equipment": ["pullup-bar"],
+      "primary_muscle": "biceps",
+      "secondary_muscles": ["lats", "rhomboids"],
+      "difficulty": "intermediate",
+      "tags": ["upper-body", "compound", "pull", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Bottom", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]},
+        {"id": "end", "label": "Top", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]}
+      ]
+    },
+    {
+      "id": "dip-parallel",
+      "name": "Parallel Bar Dips",
+      "domain": "strength",
+      "category": "dip",
+      "equipment": ["dip-bars"],
+      "primary_muscle": "triceps",
+      "secondary_muscles": ["chest", "anterior-deltoids"],
+      "difficulty": "intermediate",
+      "tags": ["upper-body", "compound", "push", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Top", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "spine"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "spine"]}
+      ]
+    },
+    {
+      "id": "burpee-standard",
+      "name": "Burpee",
+      "domain": "strength",
+      "category": "complex",
+      "equipment": [],
+      "primary_muscle": "full-body",
+      "secondary_muscles": ["chest", "legs", "core"],
+      "difficulty": "intermediate",
+      "tags": ["full-body", "compound", "explosive", "bodyweight", "cardio"],
+      "frames": [
+        {"id": "start", "label": "Standing", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Jump", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "climbers-mountain",
+      "name": "Mountain Climbers",
+      "domain": "strength",
+      "category": "complex",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders", "legs"],
+      "difficulty": "intermediate",
+      "tags": ["full-body", "cardio", "core", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Plank", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Knee Up", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "plank-high",
+      "name": "High Plank",
+      "domain": "strength",
+      "category": "plank",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders", "glutes"],
+      "difficulty": "beginner",
+      "tags": ["core", "stability", "bodyweight", "isometric"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-wrist", "R-wrist", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "plank-low",
+      "name": "Low Plank",
+      "domain": "strength",
+      "category": "plank",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders", "glutes"],
+      "difficulty": "intermediate",
+      "tags": ["core", "stability", "bodyweight", "isometric"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "raise-leg-hanging",
+      "name": "Hanging Leg Raise",
+      "domain": "strength",
+      "category": "raise",
+      "equipment": ["pullup-bar"],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "intermediate",
+      "tags": ["core", "upper-body", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Hang", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Raised", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "squat-jump",
+      "name": "Jump Squat",
+      "domain": "strength",
+      "category": "squat",
+      "equipment": [],
+      "primary_muscle": "quadriceps",
+      "secondary_muscles": ["glutes", "calves"],
+      "difficulty": "intermediate",
+      "tags": ["lower-body", "explosive", "bodyweight", "plyometric"],
+      "frames": [
+        {"id": "start", "label": "Squat", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Jump", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "lunge-bodyweight",
+      "name": "Bodyweight Lunge",
+      "domain": "strength",
+      "category": "lunge",
+      "equipment": [],
+      "primary_muscle": "quadriceps",
+      "secondary_muscles": ["glutes", "hamstrings"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "compound", "unilateral", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Standing", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "sit-wall",
+      "name": "Wall Sit",
+      "domain": "strength",
+      "category": "squat",
+      "equipment": ["wall"],
+      "primary_muscle": "quadriceps",
+      "secondary_muscles": ["glutes"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "isometric", "bodyweight"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "muscleup-standard",
+      "name": "Muscle-Up",
+      "domain": "strength",
+      "category": "complex",
+      "equipment": ["pullup-bar"],
+      "primary_muscle": "lats",
+      "secondary_muscles": ["triceps", "chest", "core"],
+      "difficulty": "advanced",
+      "tags": ["upper-body", "compound", "explosive", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Hang", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "spine", "pelvis"]},
+        {"id": "end", "label": "Top", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "spine", "pelvis"]}
+      ]
+    },
+    {
+      "id": "squat-bodyweight",
+      "name": "Bodyweight Squat",
+      "domain": "strength",
+      "category": "squat",
+      "equipment": [],
+      "primary_muscle": "quadriceps",
+      "secondary_muscles": ["glutes", "hamstrings"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "compound", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Top", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "squat-single-leg",
+      "name": "Pistol Squat",
+      "domain": "strength",
+      "category": "squat",
+      "equipment": [],
+      "primary_muscle": "quadriceps",
+      "secondary_muscles": ["glutes", "core"],
+      "difficulty": "advanced",
+      "tags": ["lower-body", "compound", "unilateral", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Top", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "handstand-wall",
+      "name": "Wall Handstand",
+      "domain": "strength",
+      "category": "handstand",
+      "equipment": ["wall"],
+      "primary_muscle": "shoulders",
+      "secondary_muscles": ["triceps", "core"],
+      "difficulty": "intermediate",
+      "tags": ["upper-body", "stability", "bodyweight", "inversion"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]}
+      ]
+    },
+    {
+      "id": "pushup-handstand",
+      "name": "Handstand Push-Up",
+      "domain": "strength",
+      "category": "pushup",
+      "equipment": ["wall"],
+      "primary_muscle": "shoulders",
+      "secondary_muscles": ["triceps", "core"],
+      "difficulty": "advanced",
+      "tags": ["upper-body", "compound", "push", "bodyweight", "inversion"],
+      "frames": [
+        {"id": "start", "label": "Top", "camera": "three_quarter", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]},
+        {"id": "end", "label": "Bottom", "camera": "side", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist", "spine"]}
+      ]
+    },
+    {
+      "id": "lsit-floor",
+      "name": "L-Sit",
+      "domain": "strength",
+      "category": "hold",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders", "hip-flexors"],
+      "difficulty": "advanced",
+      "tags": ["core", "upper-body", "isometric", "bodyweight"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-wrist", "R-wrist", "spine", "pelvis", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "bridge-glute",
+      "name": "Glute Bridge",
+      "domain": "strength",
+      "category": "bridge",
+      "equipment": [],
+      "primary_muscle": "glutes",
+      "secondary_muscles": ["hamstrings", "core"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "isolation", "glutes", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Bottom", "camera": "three_quarter", "keypoints": ["spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Top", "camera": "side", "keypoints": ["spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "crunch-bicycle",
+      "name": "Bicycle Crunch",
+      "domain": "strength",
+      "category": "crunch",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["obliques"],
+      "difficulty": "intermediate",
+      "tags": ["core", "rotation", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Left", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Right", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "situp-standard",
+      "name": "Sit-Up",
+      "domain": "strength",
+      "category": "situp",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "beginner",
+      "tags": ["core", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Down", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Up", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "plank-side",
+      "name": "Side Plank",
+      "domain": "strength",
+      "category": "plank",
+      "equipment": [],
+      "primary_muscle": "obliques",
+      "secondary_muscles": ["core", "shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["core", "stability", "bodyweight", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "raise-calf-bodyweight",
+      "name": "Bodyweight Calf Raise",
+      "domain": "strength",
+      "category": "raise",
+      "equipment": [],
+      "primary_muscle": "calves",
+      "secondary_muscles": [],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "isolation", "calves", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Bottom", "camera": "three_quarter", "keypoints": ["pelvis", "L-knee", "R-knee", "L-ankle", "R-ankle", "L-foot", "R-foot"]},
+        {"id": "end", "label": "Top", "camera": "side", "keypoints": ["pelvis", "L-knee", "R-knee", "L-ankle", "R-ankle", "L-foot", "R-foot"]}
+      ]
+    },
+    {
+      "id": "bearwalk",
+      "name": "Bear Walk",
+      "domain": "strength",
+      "category": "crawl",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders", "legs"],
+      "difficulty": "intermediate",
+      "tags": ["full-body", "functional", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Start", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Step", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "crabwalk",
+      "name": "Crab Walk",
+      "domain": "strength",
+      "category": "crawl",
+      "equipment": [],
+      "primary_muscle": "shoulders",
+      "secondary_muscles": ["triceps", "glutes", "core"],
+      "difficulty": "intermediate",
+      "tags": ["upper-body", "functional", "bodyweight"],
+      "frames": [
+        {"id": "start", "label": "Start", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-wrist", "R-wrist"]},
+        {"id": "end", "label": "Step", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-wrist", "R-wrist"]}
+      ]
+    }
+  ]
+}

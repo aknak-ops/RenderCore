@@ -1,0 +1,307 @@
+{
+  "id": "pilates_v1",
+  "name": "Pilates",
+  "version": "1.0.0",
+  "description": "Pilates exercises for core strength, stability, and body control",
+  "domain": "pilates",
+  "items": [
+    {
+      "id": "hundred-pilates",
+      "name": "The Hundred",
+      "domain": "pilates",
+      "category": "core",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["shoulders", "hip-flexors"],
+      "difficulty": "intermediate",
+      "tags": ["core", "breathing", "endurance"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "rollup-pilates",
+      "name": "Roll-Up",
+      "domain": "pilates",
+      "category": "flexion",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "intermediate",
+      "tags": ["core", "spinal-articulation"],
+      "frames": [
+        {"id": "start", "label": "Down", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Up", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "single-leg-stretch",
+      "name": "Single-Leg Stretch",
+      "domain": "pilates",
+      "category": "core",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "beginner",
+      "tags": ["core", "coordination", "unilateral"],
+      "frames": [
+        {"id": "start", "label": "Left", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Right", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "double-leg-stretch",
+      "name": "Double-Leg Stretch",
+      "domain": "pilates",
+      "category": "core",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["core", "coordination"],
+      "frames": [
+        {"id": "start", "label": "In", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Out", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "spine-stretch-forward",
+      "name": "Spine Stretch Forward",
+      "domain": "pilates",
+      "category": "stretch",
+      "equipment": [],
+      "primary_muscle": "erectors",
+      "secondary_muscles": ["hamstrings"],
+      "difficulty": "beginner",
+      "tags": ["spine", "flexibility", "articulation"],
+      "frames": [
+        {"id": "start", "label": "Tall", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Forward", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "swan-pilates",
+      "name": "Swan",
+      "domain": "pilates",
+      "category": "extension",
+      "equipment": [],
+      "primary_muscle": "erectors",
+      "secondary_muscles": ["glutes", "shoulders"],
+      "difficulty": "intermediate",
+      "tags": ["back-extension", "strength"],
+      "frames": [
+        {"id": "start", "label": "Down", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Up", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "side-leg-lift",
+      "name": "Side Leg Lift",
+      "domain": "pilates",
+      "category": "leg",
+      "equipment": [],
+      "primary_muscle": "abductors",
+      "secondary_muscles": ["glutes", "core"],
+      "difficulty": "beginner",
+      "tags": ["side-lying", "hip-strength", "unilateral"],
+      "frames": [
+        {"id": "start", "label": "Down", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Up", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "shoulder-bridge",
+      "name": "Shoulder Bridge",
+      "domain": "pilates",
+      "category": "bridge",
+      "equipment": [],
+      "primary_muscle": "glutes",
+      "secondary_muscles": ["hamstrings", "core"],
+      "difficulty": "beginner",
+      "tags": ["posterior-chain", "stability"],
+      "frames": [
+        {"id": "start", "label": "Down", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Up", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "teaser-pilates",
+      "name": "Teaser",
+      "domain": "pilates",
+      "category": "balance",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors", "shoulders"],
+      "difficulty": "advanced",
+      "tags": ["core", "balance", "full-body"],
+      "frames": [
+        {"id": "start", "label": "Down", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Balance", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "saw-pilates",
+      "name": "The Saw",
+      "domain": "pilates",
+      "category": "rotation",
+      "equipment": [],
+      "primary_muscle": "obliques",
+      "secondary_muscles": ["erectors", "hamstrings"],
+      "difficulty": "intermediate",
+      "tags": ["rotation", "stretch", "spinal-articulation"],
+      "frames": [
+        {"id": "start", "label": "Center", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Reach", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "crisscross-pilates",
+      "name": "Crisscross",
+      "domain": "pilates",
+      "category": "rotation",
+      "equipment": [],
+      "primary_muscle": "obliques",
+      "secondary_muscles": ["abs", "hip-flexors"],
+      "difficulty": "intermediate",
+      "tags": ["core", "rotation", "coordination"],
+      "frames": [
+        {"id": "start", "label": "Left", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Right", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "roll-like-ball",
+      "name": "Rolling Like a Ball",
+      "domain": "pilates",
+      "category": "massage",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["erectors"],
+      "difficulty": "beginner",
+      "tags": ["massage", "balance", "spinal-articulation"],
+      "frames": [
+        {"id": "start", "label": "Balance", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Roll", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "open-leg-rocker",
+      "name": "Open Leg Rocker",
+      "domain": "pilates",
+      "category": "balance",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hamstrings", "hip-flexors"],
+      "difficulty": "advanced",
+      "tags": ["balance", "flexibility", "coordination"],
+      "frames": [
+        {"id": "start", "label": "Balance", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Roll", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "seal-pilates",
+      "name": "Seal",
+      "domain": "pilates",
+      "category": "massage",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "intermediate",
+      "tags": ["massage", "balance", "playful"],
+      "frames": [
+        {"id": "start", "label": "Balance", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]},
+        {"id": "end", "label": "Roll", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "leg-circles",
+      "name": "Leg Circles",
+      "domain": "pilates",
+      "category": "leg",
+      "equipment": [],
+      "primary_muscle": "hip-flexors",
+      "secondary_muscles": ["abs", "adductors"],
+      "difficulty": "beginner",
+      "tags": ["hip-mobility", "core-stability", "unilateral"],
+      "frames": [
+        {"id": "start", "label": "Up", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Circle", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "scissors-pilates",
+      "name": "Scissors",
+      "domain": "pilates",
+      "category": "core",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors", "hamstrings"],
+      "difficulty": "intermediate",
+      "tags": ["core", "hamstring-stretch", "coordination"],
+      "frames": [
+        {"id": "start", "label": "Left", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Right", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "bicycle-pilates",
+      "name": "Bicycle",
+      "domain": "pilates",
+      "category": "core",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors", "quadriceps"],
+      "difficulty": "intermediate",
+      "tags": ["core", "coordination", "leg-strength"],
+      "frames": [
+        {"id": "start", "label": "Extend", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Bend", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "plank-pilates",
+      "name": "Plank (Pilates)",
+      "domain": "pilates",
+      "category": "strength",
+      "equipment": [],
+      "primary_muscle": "core",
+      "secondary_muscles": ["shoulders", "glutes"],
+      "difficulty": "intermediate",
+      "tags": ["strength", "stability", "isometric"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-wrist", "R-wrist", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "side-kick-series",
+      "name": "Side Kick Series",
+      "domain": "pilates",
+      "category": "leg",
+      "equipment": [],
+      "primary_muscle": "glutes",
+      "secondary_muscles": ["abductors", "core"],
+      "difficulty": "intermediate",
+      "tags": ["side-lying", "hip-strength", "series"],
+      "frames": [
+        {"id": "start", "label": "Back", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]},
+        {"id": "end", "label": "Front", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "push-up-pilates",
+      "name": "Push-Up (Pilates)",
+      "domain": "pilates",
+      "category": "strength",
+      "equipment": [],
+      "primary_muscle": "chest",
+      "secondary_muscles": ["triceps", "core"],
+      "difficulty": "intermediate",
+      "tags": ["strength", "flow", "spinal-articulation"],
+      "frames": [
+        {"id": "start", "label": "Standing", "camera": "three_quarter", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]},
+        {"id": "end", "label": "Push-Up", "camera": "side", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-wrist", "R-wrist"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "id": "stretches_static_v1",
+  "name": "Static Stretches",
+  "version": "1.0.0",
+  "description": "Static stretching exercises for flexibility and mobility",
+  "domain": "stretches",
+  "items": [
+    {
+      "id": "stretch-hamstring-standing",
+      "name": "Standing Hamstring Stretch",
+      "domain": "stretches",
+      "category": "hamstring",
+      "equipment": [],
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": ["calves"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-hamstring-seated",
+      "name": "Seated Hamstring Stretch",
+      "domain": "stretches",
+      "category": "hamstring",
+      "equipment": [],
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": ["calves", "erectors"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-quad-standing",
+      "name": "Standing Quad Stretch",
+      "domain": "stretches",
+      "category": "quadriceps",
+      "equipment": [],
+      "primary_muscle": "quadriceps",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-calf-wall",
+      "name": "Wall Calf Stretch",
+      "domain": "stretches",
+      "category": "calf",
+      "equipment": ["wall"],
+      "primary_muscle": "calves",
+      "secondary_muscles": ["achilles"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle", "L-foot", "R-foot"]}
+      ]
+    },
+    {
+      "id": "stretch-butterfly",
+      "name": "Butterfly Stretch",
+      "domain": "stretches",
+      "category": "hip",
+      "equipment": [],
+      "primary_muscle": "adductors",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static", "hips"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-hipflexor-lunge",
+      "name": "Hip Flexor Lunge Stretch",
+      "domain": "stretches",
+      "category": "hip",
+      "equipment": [],
+      "primary_muscle": "hip-flexors",
+      "secondary_muscles": ["quadriceps"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-itband",
+      "name": "IT Band Stretch",
+      "domain": "stretches",
+      "category": "leg",
+      "equipment": [],
+      "primary_muscle": "IT-band",
+      "secondary_muscles": ["glutes"],
+      "difficulty": "intermediate",
+      "tags": ["lower-body", "flexibility", "static", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-spinal-seated",
+      "name": "Seated Spinal Twist",
+      "domain": "stretches",
+      "category": "spine",
+      "equipment": [],
+      "primary_muscle": "obliques",
+      "secondary_muscles": ["erectors"],
+      "difficulty": "beginner",
+      "tags": ["spine", "flexibility", "static", "rotation"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip"]}
+      ]
+    },
+    {
+      "id": "stretch-knees-chest",
+      "name": "Knees to Chest",
+      "domain": "stretches",
+      "category": "lower-back",
+      "equipment": [],
+      "primary_muscle": "erectors",
+      "secondary_muscles": ["glutes"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static", "back"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "stretch-childs-pose",
+      "name": "Child's Pose",
+      "domain": "stretches",
+      "category": "back",
+      "equipment": [],
+      "primary_muscle": "erectors",
+      "secondary_muscles": ["shoulders", "hips"],
+      "difficulty": "beginner",
+      "tags": ["full-body", "flexibility", "static", "relaxation"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "stretch-frog",
+      "name": "Frog Stretch",
+      "domain": "stretches",
+      "category": "hip",
+      "equipment": [],
+      "primary_muscle": "adductors",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "intermediate",
+      "tags": ["lower-body", "flexibility", "static", "hips"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-forward-wide",
+      "name": "Wide Forward Fold",
+      "domain": "stretches",
+      "category": "hamstring",
+      "equipment": [],
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": ["adductors", "erectors"],
+      "difficulty": "intermediate",
+      "tags": ["lower-body", "flexibility", "static"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-pigeon",
+      "name": "Pigeon Stretch",
+      "domain": "stretches",
+      "category": "hip",
+      "equipment": [],
+      "primary_muscle": "hip-flexors",
+      "secondary_muscles": ["glutes", "piriformis"],
+      "difficulty": "intermediate",
+      "tags": ["lower-body", "flexibility", "static", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "stretch-shoulder-cross",
+      "name": "Cross-Body Shoulder Stretch",
+      "domain": "stretches",
+      "category": "shoulder",
+      "equipment": [],
+      "primary_muscle": "rear-deltoids",
+      "secondary_muscles": ["triceps"],
+      "difficulty": "beginner",
+      "tags": ["upper-body", "flexibility", "static", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist"]}
+      ]
+    },
+    {
+      "id": "stretch-triceps-overhead",
+      "name": "Overhead Triceps Stretch",
+      "domain": "stretches",
+      "category": "triceps",
+      "equipment": [],
+      "primary_muscle": "triceps",
+      "secondary_muscles": ["lats"],
+      "difficulty": "beginner",
+      "tags": ["upper-body", "flexibility", "static", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow", "L-wrist", "R-wrist"]}
+      ]
+    },
+    {
+      "id": "stretch-chest-doorway",
+      "name": "Doorway Chest Stretch",
+      "domain": "stretches",
+      "category": "chest",
+      "equipment": ["wall"],
+      "primary_muscle": "chest",
+      "secondary_muscles": ["anterior-deltoids"],
+      "difficulty": "beginner",
+      "tags": ["upper-body", "flexibility", "static"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow"]}
+      ]
+    },
+    {
+      "id": "stretch-neck-side",
+      "name": "Side Neck Stretch",
+      "domain": "stretches",
+      "category": "neck",
+      "equipment": [],
+      "primary_muscle": "neck",
+      "secondary_muscles": ["traps"],
+      "difficulty": "beginner",
+      "tags": ["neck", "flexibility", "static", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "neck", "L-shoulder", "R-shoulder"]}
+      ]
+    },
+    {
+      "id": "stretch-cat-cow",
+      "name": "Cat-Cow Stretch",
+      "domain": "stretches",
+      "category": "spine",
+      "equipment": [],
+      "primary_muscle": "erectors",
+      "secondary_muscles": ["abs"],
+      "difficulty": "beginner",
+      "tags": ["spine", "flexibility", "static", "mobility"],
+      "frames": [
+        {"id": "start", "label": "Cat", "camera": "three_quarter", "keypoints": ["head", "neck", "spine", "pelvis", "L-shoulder", "R-shoulder"]},
+        {"id": "end", "label": "Cow", "camera": "side", "keypoints": ["head", "neck", "spine", "pelvis", "L-shoulder", "R-shoulder"]}
+      ]
+    },
+    {
+      "id": "stretch-figure4",
+      "name": "Figure-4 Hip Stretch",
+      "domain": "stretches",
+      "category": "hip",
+      "equipment": [],
+      "primary_muscle": "piriformis",
+      "secondary_muscles": ["glutes"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static", "unilateral"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "stretch-cobra",
+      "name": "Cobra Stretch",
+      "domain": "stretches",
+      "category": "back",
+      "equipment": [],
+      "primary_muscle": "abs",
+      "secondary_muscles": ["hip-flexors"],
+      "difficulty": "beginner",
+      "tags": ["spine", "flexibility", "static", "extension"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "neck", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-elbow", "R-elbow"]}
+      ]
+    },
+    {
+      "id": "stretch-90-90",
+      "name": "90/90 Hip Stretch",
+      "domain": "stretches",
+      "category": "hip",
+      "equipment": [],
+      "primary_muscle": "hip-flexors",
+      "secondary_muscles": ["glutes", "piriformis"],
+      "difficulty": "intermediate",
+      "tags": ["lower-body", "flexibility", "static", "hips"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-seated-forward",
+      "name": "Seated Forward Fold",
+      "domain": "stretches",
+      "category": "hamstring",
+      "equipment": [],
+      "primary_muscle": "hamstrings",
+      "secondary_muscles": ["calves", "erectors"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-hip", "R-hip", "L-knee", "R-knee", "L-ankle", "R-ankle"]}
+      ]
+    },
+    {
+      "id": "stretch-supine-twist",
+      "name": "Supine Spinal Twist",
+      "domain": "stretches",
+      "category": "spine",
+      "equipment": [],
+      "primary_muscle": "obliques",
+      "secondary_muscles": ["erectors"],
+      "difficulty": "beginner",
+      "tags": ["spine", "flexibility", "static", "rotation"],
+      "frames": [
+        {"id": "hold", "label": "Hold", "camera": "front", "keypoints": ["head", "spine", "pelvis", "L-shoulder", "R-shoulder", "L-hip", "R-hip", "L-knee", "R-knee"]}
+      ]
+    },
+    {
+      "id": "stretch-ankle-circles",
+      "name": "Ankle Circles",
+      "domain": "stretches",
+      "category": "ankle",
+      "equipment": [],
+      "primary_muscle": "calves",
+      "secondary_muscles": ["tibialis"],
+      "difficulty": "beginner",
+      "tags": ["lower-body", "flexibility", "static", "mobility"],
+      "frames": [
+        {"id": "start", "label": "Start", "camera": "three_quarter", "keypoints": ["L-knee", "R-knee", "L-ankle", "R-ankle", "L-foot", "R-foot"]},
+        {"id": "end", "label": "Circle", "camera": "side", "keypoints": ["L-knee", "R-knee", "L-ankle", "R-ankle", "L-foot", "R-foot"]}
+      ]
+    }
+  ]
+}
