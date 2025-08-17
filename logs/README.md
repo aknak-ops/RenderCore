@@ -1,1 +1,0 @@
-# README.md - Placeholder script or config for RenderCore system

@@ -1,7 +1,0 @@
-This module auto-scans all renders and flags issues:
-- Cropping
-- Missing black muscle lines
-- Misaligned color gradients
-- Bad posture
-- Off-center body
-Any flagged image is marked for auto-rerender.

@@ -1,1 +1,0 @@
-Render failed at phase 2 due to missing overlay.

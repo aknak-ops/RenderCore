@@ -1,1 +1,0 @@
-A default prompt goes here for fallback use.

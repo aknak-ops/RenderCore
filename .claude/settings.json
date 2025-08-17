@@ -1,6 +1,0 @@
-{
-  "permissions": { "deny": [
-    "Read(./build/**)", "Read(./generated_pngs/**)", "Read(./backups/**)",
-    "Read(./assets/**)", "Read(./**/*.png)", "Read(./**/*.jpg)", "Read(./.env*)"
-  ]}
-}

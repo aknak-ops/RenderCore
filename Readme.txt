@@ -1,1 +1,0 @@
-RenderCore Micro Pack 03: Includes safe utility scripts, config fragments, and system toggles.

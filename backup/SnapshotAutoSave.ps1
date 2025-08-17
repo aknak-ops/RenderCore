@@ -1,1 +1,0 @@
-# SnapshotAutoSave.ps1 - RenderCore Pack 10 feature

@@ -1,1 +1,0 @@
-Detected limb drift in frame 2 of bicep curl sequence.

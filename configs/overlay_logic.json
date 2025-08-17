@@ -1,7 +1,0 @@
-{
-  "injection_type": "invisible",
-  "opacity": 0.0,
-  "alignment": "centered",
-  "scale_locked": true,
-  "usage": "anatomical_pose_guidance"
-}

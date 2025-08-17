@@ -1,1 +1,0 @@
-def render(entry): return '[STAMPED] With watermark'

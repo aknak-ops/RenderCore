@@ -1,1 +1,0 @@
-# Generates thumbnail grids for render folders

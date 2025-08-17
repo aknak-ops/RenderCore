@@ -1,1 +1,0 @@
-# Automatically retries bad renders using updated logic

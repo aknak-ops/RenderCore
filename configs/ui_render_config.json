@@ -1,9 +1,0 @@
-{
-  "type": "interface_asset",
-  "target_system": "Zorta UI",
-  "include_character_logic": false,
-  "assets_folder": "ui_assets/",
-  "theme_support": true,
-  "muscle_overlay": false,
-  "layout_guides": true
-}

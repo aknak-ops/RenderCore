@@ -1,1 +1,0 @@
-This is mock pose data used for test overlay copying.
