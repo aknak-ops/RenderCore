@@ -1,17 +1,23 @@
-# ---- RenderCore only (ban Athia Fit app bits) ----
+# Build + tooling
+.dart_tool/
+build/
+dist/
+node_modules/
+.venv/
+.vscode/
+**/__pycache__/
+
+# Staging and incoming blobs
 _athiafit_staging/
-athiafit_*/
-**/athia_fit*/
-**/assets/shared_challenges/
-**/assets/ui_templates/
-**/examples/**            # Athia demo/sample apps
-**/screens/**             # app UI screens (Athia)
-**/widgets/**             # app widgets (Athia)
-**/features/**            # app features (Athia)
-**/services/**/form_checker.dart
-**/services/**/content_pack_service.dart
-**/services/**/onboarding*/**
-**/services/**/prebeta*/**
-**/.dart_tool/
-**/build/
-**/.vscode/
+**/_incominggdrive_drop*/
+**/metadata/
+
+# Big binaries we should never track
+*.exe
+*.apk
+*.ipa
+*.zip
+*.7z
+*.mp4
+*.mov
+*.iso
