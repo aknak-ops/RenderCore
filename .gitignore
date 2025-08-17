@@ -1,0 +1,21 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.dart_tool/
+.packages
+build/
+**/.ipynb_checkpoints
+_athiafit_staging/
+_incoming*gdrive_drop*/
+# Keep RenderCore as a library — block typical app folders & heavy assets
+assets/
+!assets/README.md
+firebase*
+integration_test/
+examples/
+.vscode/
+.dart_tool/
+metadata/
+_incoming*/
+_athiafit_staging/
