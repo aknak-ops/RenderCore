@@ -1,30 +1,31 @@
-# Keep only library code and necessary config
-lib/
-!lib/rendercore/**
+# ---- RenderCore library-only ----
+# Flutter build + platforms (this repo is not an app)
+.build/
+build/
+.android/
+.ios/
+windows/
+linux/
+macos/
+web/
 
-# Ignore app/UI & staging
+# App UIs we explicitly don't track in RC
 web_ui/
 web_ui_backend/
 web_dashboard/
 workout/
-visual_debug/
 _athiafit_staging/
 
-# Ignore big/binary and temporary areas
-assets/
-build/
-dist/
+# Node/web artifacts if they appear
 node_modules/
-*.log
-*.lock
-*.tmp
-*.bak
+dist/
 
-# VS Code & local
-.vscode/
-.history/
+# Large binaries/placeholders accidentally dropped
+assets/
+assets/**
+
+# OS/editor
 .DS_Store
-
-# Python venvs / caches
-.venv/
-__pycache__/
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
