@@ -1,1 +1,0 @@
-This is a placeholder for rendercore_shortcut_launcher.py

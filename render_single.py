@@ -1,1 +1,0 @@
-# Renders one image based on JSON input

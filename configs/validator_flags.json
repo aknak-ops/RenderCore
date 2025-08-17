@@ -1,7 +1,0 @@
-{
-  "reject_if_cropped": true,
-  "require_black_lines": true,
-  "enforce_canvas_centering": true,
-  "reject_incorrect_gradient_flow": true,
-  "validate_pose_symmetry": true
-}

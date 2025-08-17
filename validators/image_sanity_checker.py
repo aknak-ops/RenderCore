@@ -1,1 +1,0 @@
-# image_sanity_checker.py - Placeholder script or config for RenderCore system

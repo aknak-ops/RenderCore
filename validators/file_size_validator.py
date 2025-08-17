@@ -1,1 +1,0 @@
-# file_size_validator.py - Placeholder script or config for RenderCore system

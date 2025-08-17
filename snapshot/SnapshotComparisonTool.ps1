@@ -1,1 +1,0 @@
-# SnapshotComparisonTool.ps1 - Feature script for Pack 27

@@ -1,1 +1,0 @@
-def render(entry): return '[MULTIVIEW] 3-angle view'

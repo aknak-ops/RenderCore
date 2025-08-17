@@ -1,1 +1,0 @@
-# Validates anatomical logic

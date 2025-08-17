@@ -1,1 +1,0 @@
-# Handles batch image rendering from a list

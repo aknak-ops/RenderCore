@@ -1,1 +1,0 @@
-# Generates gallery HTML from history.csv

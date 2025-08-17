@@ -1,1 +1,0 @@
-python core/render.py

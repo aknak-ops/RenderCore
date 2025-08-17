@@ -1,3 +1,0 @@
-All character renders must include clear, black muscle definition lines.
-This tool checks for missing outlines and applies corrections.
-Minimum line thickness is enforced to prevent faint lines.

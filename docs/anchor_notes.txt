@@ -1,4 +1,0 @@
-This module keeps character anatomy consistent:
-- Fixes major joint locations
-- Prevents shoulder/knee/foot drifting
-- Ensures every pose appears in the same visual position
