@@ -1,0 +1,30 @@
+# Keep only library code and necessary config
+lib/
+!lib/rendercore/**
+
+# Ignore app/UI & staging
+web_ui/
+web_ui_backend/
+web_dashboard/
+workout/
+visual_debug/
+_athiafit_staging/
+
+# Ignore big/binary and temporary areas
+assets/
+build/
+dist/
+node_modules/
+*.log
+*.lock
+*.tmp
+*.bak
+
+# VS Code & local
+.vscode/
+.history/
+.DS_Store
+
+# Python venvs / caches
+.venv/
+__pycache__/
